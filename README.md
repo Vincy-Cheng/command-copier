@@ -33,3 +33,7 @@ Build the application
 ```bash
 npm run build
 ```
+
+### Screenshots
+![image](https://github.com/user-attachments/assets/9e7bd2ef-5096-4596-b298-bdcfe7f12829)
+
