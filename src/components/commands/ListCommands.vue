@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
+import confirmDialog from "../../utils/confirmDialog";
+
 import { store } from "../../store/store";
+
 
 const openGroup = ref<string | null>(null);
 
@@ -12,9 +15,23 @@ function copyCommand(cmd: string) {
   navigator.clipboard.writeText(cmd);
 }
 
+async function confirmDelete(index: number) {
+  console.log('test')
+
+  const group = openGroup.value;
+
+  if (group !== null) {
+    await confirmDialog("warning", "Confirm Deletion", "Are you sure you want to delete this command?", () => {
+      store.removeCommand(group, index);
+    });
+  }
+}
+
 const data = computed(() => {
   return Object.entries(store.commands);
 });
+
+
 </script>
 
 <template>
@@ -36,11 +53,9 @@ const data = computed(() => {
 
             <div class="accordion-content-actions">
               <button @click="copyCommand(cmd.command)">
-                <i class="pi pi-clipboard"></i></button
-              ><button
-                @click="store.removeCommand(group, index)"
-                id="delete-command-button"
-              >
+                <i class="pi pi-clipboard"></i>
+              </button>
+              <button @click="confirmDelete(index)" id="delete-command-button">
                 <i class="pi pi-trash"></i>
               </button>
             </div>
