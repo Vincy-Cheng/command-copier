@@ -33,6 +33,11 @@ Build the application
 ```bash
 npm run build
 ```
+Build the application in release mode
+
+```bash
+npm run build:tauri
+```
 
 ### Screenshots
 ![image](https://github.com/user-attachments/assets/9e7bd2ef-5096-4596-b298-bdcfe7f12829)
