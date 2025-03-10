@@ -7,7 +7,7 @@ This project is a [Tauri](https://v2.tauri.app/) application developed with Vue 
 - **Adding Commands**: Users can add new commands with descriptions and group them.
 - **Listing Commands**: Commands are displayed in an accordion-style list, grouped by their categories.
 - **Copying Commands**: Users can copy commands to the clipboard with a single click.
-- **Exporting Commands**: Users can export the list of commands to a JSON file for backup or sharing.
+- **Exporting Commands**: Users can export the list of commands to a JSON file for backup or sharing. It is exported in Download folder.
 - **Importing Commands**: Users can import commands from a JSON file to restore or update their command list.
 
 ## Prerequisites
